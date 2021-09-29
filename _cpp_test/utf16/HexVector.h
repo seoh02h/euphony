@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <vector>
+#include <stdint.h>
 
 namespace Euphony {
     class HexVector {
