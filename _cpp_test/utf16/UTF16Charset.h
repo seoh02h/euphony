@@ -10,7 +10,8 @@
 namespace Euphony {
     class UTF16Charset : Charset {
     public:
-        ~Charset() = default;
+        UTF16Charset() = default;
+        ~UTF16Charset() = default;
 
         HexVector encode(std::string src) = 0;
         std::string decode(const HexVector &src) = 0;

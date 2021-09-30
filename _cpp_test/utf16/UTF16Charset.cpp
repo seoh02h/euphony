@@ -9,8 +9,10 @@
 using namespace Euphony;
 
 HexVector UTF16Charset::encode(std::string src) {
-    HexVector result(src.size());
+    std::vector<int8_t> source { 0xa, 0xc, 0x0, 0x0 };
+    HexVector result = HexVector(source);
 
+//    throw std::out_of_range(result.toString() + "abcd");
 
     return result;
 }
@@ -18,7 +20,6 @@ HexVector UTF16Charset::encode(std::string src) {
 std::string UTF16Charset::decode(const HexVector &src) {
     std::string result;
 
-    std::string stringSrc = src.toString();
-
-    return result;
+    result = "가";
+    return "가";
 }

@@ -29,7 +29,7 @@ HexVector::HexVector(const std::string& hexString) {
     }
 }
 
-HexVector::HexVector(const std::vector<u_int8_t> &hexVectorCopy) {
+HexVector::HexVector(const std::vector<int8_t> &hexVectorCopy) {
     setHexSource(hexVectorCopy);
 }
 
@@ -38,7 +38,7 @@ HexVector::~HexVector() {
     hexSource.clear();
 }
 
-void HexVector::pushBack(u_int8_t hexByte) {
+void HexVector::pushBack(int8_t hexByte) {
     if(hexByte <= 0x0f) {
         hexSource.push_back(hexByte);
     } else {
@@ -61,13 +61,13 @@ std::string HexVector::toString() const{
     return result.str();
 }
 
-const std::vector<u_int8_t> &HexVector::getHexSource() const {
+const std::vector<int8_t> &HexVector::getHexSource() const {
     return hexSource;
 }
 
-void HexVector::setHexSource(const std::vector<u_int8_t> &hexSrc) {
+void HexVector::setHexSource(const std::vector<int8_t> &hexSrc) {
     this->clear();
-    for(u_int8_t hex : hexSrc) {
+    for(int8_t hex : hexSrc) {
         this->pushBack(hex);
     }
 }
@@ -76,15 +76,6 @@ int HexVector::getSize() const {
     return hexSource.size();
 }
 
-std::__wrap_iter<std::vector<unsigned char, std::allocator<unsigned char>>::const_pointer>
-HexVector::begin() const{
-    return hexSource.begin();
-}
-
-std::__wrap_iter<std::vector<unsigned char, std::allocator<unsigned char>>::const_pointer>
-HexVector::end() const{
-    return hexSource.end();
-}
 
 void HexVector::clear(){
     hexSource.clear();
